@@ -27,6 +27,14 @@ layout: base.njk
           
           <h1 class="mb-6">{{ title }}</h1>
           
+          <div class="event-meta">
+            {% if tags and tags.includes('beginner') %}
+            <span class="badge badge-beginner">✓ Beginner-Friendly</span>
+            {% endif %}
+            <span class="badge badge-time">⏱️ 60-90 minutes</span>
+            <span class="badge badge-laptop">💻 Bring a laptop (optional)</span>
+          </div>
+          
           <div class="flex flex-wrap gap-6 text-lg mb-6">
             <div>
               <strong>Date:</strong> {{ eventDate | dateFormat }}

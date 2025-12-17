@@ -835,6 +835,18 @@
   box-shadow: 0 4px 12px rgba(224, 49, 49, 0.2);
 }
 
+/* Light variant for dark backgrounds */
+.btn-swiss-outline-light {
+  border-color: white !important;
+  color: white !important;
+}
+
+.btn-swiss-outline-light:hover {
+  background: white !important;
+  color: #1a1a1a !important;
+  border-color: white !important;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .beginner-banner {

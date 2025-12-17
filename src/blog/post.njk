@@ -1,0 +1,98 @@
+---
+pagination:
+  data: collections.blog
+  size: 1
+  alias: post
+permalink: "/blog/{{ post.slug.current }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ post.title }}"
+  description: "{{ post.description }}"
+---
+
+<section class="swiss-section">
+  <div class="swiss-container max-w-3xl">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm">
+      <a href="/" class="text-swiss-red hover:underline">Home</a>
+      <span class="mx-2">→</span>
+      <a href="/blog/" class="text-swiss-red hover:underline">Blog</a>
+      <span class="mx-2">→</span>
+      <span class="text-swiss-gray-600">{{ post.title }}</span>
+    </nav>
+
+    <!-- Article Header -->
+    <article>
+      <header class="mb-8">
+        {% if post.featured %}
+        <span class="event-tag mb-4 inline-block" style="background-color: var(--swiss-red); color: white;">
+          Featured Article
+        </span>
+        {% endif %}
+        
+        <h1 class="mb-4">{{ post.title }}</h1>
+        
+        <div class="flex items-center gap-4 text-swiss-gray-600 mb-6">
+          <time datetime="{{ post.publishedAt | dateToISO }}">
+            {{ post.publishedAt | dateFormat }}
+          </time>
+          {% if post.author %}
+          <span>•</span>
+          <span>By {{ post.author.name }}</span>
+          {% endif %}
+        </div>
+
+        {% if post.description %}
+        <p class="text-xl text-swiss-gray-700">{{ post.description }}</p>
+        {% endif %}
+      </header>
+
+      <!-- Article Content -->
+      <div class="prose prose-lg max-w-none mb-8">
+        {% if post.content %}
+        <div class="blog-content">
+          {% for block in post.content %}
+            {% if block._type == "block" %}
+              {% if block.style == "h2" %}
+                <h2>{{ block.children[0].text }}</h2>
+              {% elif block.style == "h3" %}
+                <h3>{{ block.children[0].text }}</h3>
+              {% elif block.style == "h4" %}
+                <h4>{{ block.children[0].text }}</h4>
+              {% else %}
+                <p>{{ block.children[0].text }}</p>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Tags -->
+      {% if post.tags and post.tags.length > 0 %}
+      <div class="mb-8 pb-8 border-b border-swiss-gray-200">
+        <h3 class="text-sm font-bold text-swiss-gray-600 mb-3">Topics</h3>
+        <div class="flex gap-2 flex-wrap">
+          {% for tag in post.tags %}
+          <span class="event-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- CTA Section -->
+      <div class="swiss-card bg-swiss-gray-50 text-center">
+        <h2 class="mb-4" style="font-size: var(--fluid-h3);">Want to Learn More?</h2>
+        <p class="mb-6">Join our free AI town halls and training sessions.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="/events/" class="btn-swiss-red">
+            View Upcoming Events
+          </a>
+          <a href="/blog/" class="btn-swiss-outline">
+            Read More Articles
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

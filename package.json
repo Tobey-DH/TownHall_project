@@ -1,0 +1,58 @@
+{
+  "name": "newark-ai-townhall",
+  "version": "1.0.0",
+  "description": "Newark AI Community Nonprofit - Town Hall website for AI education and community engagement",
+  "type": "module",
+  "scripts": {
+    "start": "npm-run-all --parallel dev:*",
+    "dev:eleventy": "eleventy --serve --port=8080",
+    "dev:css": "npm run build:css -- --watch",
+    "build": "npm-run-all build:css build:eleventy",
+    "build:eleventy": "eleventy",
+    "build:css": "tailwindcss -i src/styles/main.css -o _site/styles/main.css --minify",
+    "clean": "rimraf _site",
+    "seed:sanity": "node scripts/seed-sanity.js",
+    "serve:site": "node tests/server.mjs",
+    "lint:js": "eslint \"src/**/*.{js,mjs}\" \"scripts/**/*.js\" --max-warnings=0",
+    "lint:css": "stylelint \"src/**/*.{css,njk}\"",
+    "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _site",
+    "test:e2e": "playwright test",
+    "lhci": "lhci autorun",
+    "bundle:size": "node scripts/check-bundle-size.mjs",
+    "ci": "npm run build; npm run lint:js; npm run lint:css; npm run lint:md; npm run test:e2e; npm run lhci; npm run bundle:size"
+  },
+  "keywords": [
+    "ai-education",
+    "newark",
+    "community",
+    "nonprofit",
+    "townhall"
+  ],
+  "author": "Newark AI Community",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.57.0",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^17.2.3",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.39.2",
+    "markdownlint-cli": "^0.47.0",
+    "npm-run-all": "^4.1.5",
+    "playwright": "^1.57.0",
+    "postcss": "^8.4.49",
+    "rimraf": "^6.0.1",
+    "stylelint": "^16.26.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@sanity/client": "^7.13.2",
+    "@sanity/image-url": "^2.0.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "vanilla-cookieconsent": "^3.1.0"
+  }
+}

@@ -1,0 +1,91 @@
+---
+layout: base.njk
+---
+
+<article class="swiss-section">
+  <div class="swiss-container">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <ol class="flex items-center gap-2 text-sm text-swiss-gray-600">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog/">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">{{ title }}</li>
+      </ol>
+    </nav>
+    
+    <div class="max-w-4xl mx-auto">
+      <header class="mb-12">
+        <h1 class="mb-4">{{ title }}</h1>
+        
+        <div class="flex items-center gap-4 text-swiss-gray-600 mb-6">
+          <time datetime="{{ date | dateToISO }}">
+            {{ date | dateFormat }}
+          </time>
+          {% if readTime %}
+          <span aria-label="Estimated reading time">• {{ readTime }} min read</span>
+          {% endif %}
+        </div>
+        
+        {% if description %}
+        <p class="text-swiss-gray-700 leading-relaxed" style="font-size: var(--fluid-body-lg);">
+          {{ description }}
+        </p>
+        {% endif %}
+      </header>
+      
+      <div class="blog-content">
+        {{ content | safe }}
+      </div>
+      
+      <!-- Call to Action -->
+      <div class="swiss-divider my-16"></div>
+      <div class="mt-8">
+        <div class="swiss-card">
+          <h2 class="mb-4" style="font-size: var(--fluid-h3);">Join the Conversation</h2>
+          <p class="mb-6">Have questions about this topic? Want to discuss with other community members? Join our Discord community!</p>
+          <div class="flex gap-4 flex-wrap">
+            <a href="{{ site.social.discord }}" class="btn-swiss-red" target="_blank" rel="noopener noreferrer">
+              Join Discord
+            </a>
+            <a href="/events/" class="btn-swiss-outline">
+              Attend an Event
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Related Posts -->
+      {% set relatedPosts = collections.blog | limit(3) %}
+      {% if relatedPosts.length > 1 %}
+      <div class="swiss-divider my-16"></div>
+      <div class="mt-8">
+        <span class="swiss-section-label">Continue Reading</span>
+        <h2 class="mb-8" style="font-size: var(--fluid-h2);">More Articles</h2>
+        <div class="swiss-grid">
+          {% for related in relatedPosts %}
+          {% if related.url != page.url %}
+          <div class="swiss-col-4">
+            <article class="swiss-card h-full">
+              <h3 class="mb-3" style="font-size: var(--fluid-h4);">
+                <a href="{{ related.url }}" class="no-underline hover:text-swiss-red">
+                  {{ related.data.title }}
+                </a>
+              </h3>
+              <p class="text-sm text-swiss-gray-600 mb-3">
+                {{ related.data.date | dateFormat }}
+              </p>
+              <p class="text-swiss-gray-700">
+                {{ related.data.description or (related.templateContent | excerpt) }}
+              </p>
+            </article>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

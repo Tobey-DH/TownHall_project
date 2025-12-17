@@ -1,0 +1,126 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Newark AI Community Town Hall - Home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - text: Newark AI Community
+      - navigation "Main navigation" [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Home" [ref=e10] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e11]:
+            - link "Events" [ref=e12] [cursor=pointer]:
+              - /url: /events/
+          - listitem [ref=e13]:
+            - link "Blog" [ref=e14] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=e15]:
+            - link "Get Involved" [ref=e16] [cursor=pointer]:
+              - /url: /get-involved/
+          - listitem [ref=e17]:
+            - link "About" [ref=e18] [cursor=pointer]:
+              - /url: /about/
+  - main [ref=e19]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: Knowledge Hub
+        - heading "Blog & Resources" [level=1] [ref=e24]
+        - paragraph [ref=e25]: Straightforward, jargon-free articles about AI and how it affects your daily life. Written by community members, for community members.
+      - generic [ref=e26]:
+        - article [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: January 14, 2026
+            - 'heading "AI and Your Privacy: What You Need to Know" [level=2] [ref=e30]':
+              - 'link "AI and Your Privacy: What You Need to Know" [ref=e31] [cursor=pointer]':
+                - /url: /blog/ai-privacy-guide/
+            - paragraph [ref=e32]: A straightforward guide to protecting your privacy when using AI tools. Learn what data is collected, how it's used, and simple steps to stay safe.
+            - link "Read More →" [ref=e34] [cursor=pointer]:
+              - /url: /blog/ai-privacy-guide/
+        - article [ref=e35]:
+          - generic [ref=e36]:
+            - generic [ref=e37]: January 12, 2026
+            - heading "How AI Can Help Your Small Business Save Time and Money" [level=2] [ref=e38]:
+              - link "How AI Can Help Your Small Business Save Time and Money" [ref=e39] [cursor=pointer]:
+                - /url: /blog/ai-help-small-business/
+            - paragraph [ref=e40]: Discover free AI tools that can help your Newark small business with marketing, customer service, bookkeeping, and more—no tech skills required.
+            - link "Read More →" [ref=e42] [cursor=pointer]:
+              - /url: /blog/ai-help-small-business/
+        - article [ref=e43]:
+          - generic [ref=e44]:
+            - generic [ref=e45]: January 10, 2026
+            - heading "What is AI? A Simple Explanation for Newark Residents" [level=2] [ref=e46]:
+              - link "What is AI? A Simple Explanation for Newark Residents" [ref=e47] [cursor=pointer]:
+                - /url: /blog/what-is-ai-simple-explanation/
+            - paragraph [ref=e48]: Artificial intelligence doesn't have to be complicated. Learn what AI really is, how it works, and why it matters to you—explained in plain English without the tech jargon.
+            - link "Read More →" [ref=e50] [cursor=pointer]:
+              - /url: /blog/what-is-ai-simple-explanation/
+  - contentinfo [ref=e51]:
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: About
+          - heading "Newark AI Community" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Empowering Newark residents with AI knowledge through free town halls, training sessions, and community support.
+          - paragraph [ref=e58]:
+            - text: Newark, NJ
+            - text: (973) 555-0100
+        - generic [ref=e59]:
+          - generic [ref=e60]: Navigate
+          - heading "Quick Links" [level=3] [ref=e61]
+          - list [ref=e62]:
+            - listitem [ref=e63]:
+              - link "Upcoming Events" [ref=e64] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e65]:
+              - link "Blog & Resources" [ref=e66] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e67]:
+              - link "Get Involved" [ref=e68] [cursor=pointer]:
+                - /url: /get-involved/
+            - listitem [ref=e69]:
+              - link "About Us" [ref=e70] [cursor=pointer]:
+                - /url: /about/
+        - generic [ref=e71]:
+          - generic [ref=e72]: Join
+          - heading "Community" [level=3] [ref=e73]
+          - list [ref=e74]:
+            - listitem [ref=e75]:
+              - link "Discord Community" [ref=e76] [cursor=pointer]:
+                - /url: /get-involved/#volunteer
+            - listitem [ref=e77]:
+              - link "Join a Town Hall" [ref=e78] [cursor=pointer]:
+                - /url: /events/
+            - listitem [ref=e79]:
+              - link "Volunteer" [ref=e80] [cursor=pointer]:
+                - /url: /get-involved/#volunteer
+            - listitem [ref=e81]:
+              - link "RSS Feed" [ref=e82] [cursor=pointer]:
+                - /url: /blog/feed.xml
+        - generic [ref=e83]:
+          - generic [ref=e84]: Social
+          - heading "Connect" [level=3] [ref=e85]
+          - list [ref=e86]:
+            - listitem [ref=e87]:
+              - link "Twitter" [ref=e88] [cursor=pointer]:
+                - /url: https://twitter.com/newarkai
+            - listitem [ref=e89]:
+              - link "LinkedIn" [ref=e90] [cursor=pointer]:
+                - /url: https://linkedin.com/company/newark-ai-community
+            - listitem [ref=e91]:
+              - link "YouTube" [ref=e92] [cursor=pointer]:
+                - /url: https://youtube.com/@newarkai
+      - generic [ref=e93]:
+        - paragraph [ref=e94]: © 2025 Newark AI Community. All rights reserved.
+        - paragraph [ref=e95]: Empowering Newark residents with AI knowledge and community support.
+  - generic [ref=e98]:
+    - paragraph [ref=e99]: We use minimal analytics to improve this site.
+    - generic [ref=e100]:
+      - button "Accept" [ref=e101]
+      - button "Decline" [ref=e102]
+```

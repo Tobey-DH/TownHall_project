@@ -1,0 +1,69 @@
+<footer class="site-footer" role="contentinfo" data-component="footer">
+  <div class="swiss-container">
+    <div class="swiss-grid">
+      <!-- About Column -->
+      <div class="swiss-col-4">
+        <span class="swiss-section-label">About</span>
+        <h3 class="mb-4" style="font-size: var(--fluid-h4);">{{ site.organization.name }}</h3>
+        <p class="mb-4">{{ site.description }}</p>
+        <p class="text-sm text-swiss-gray-600">
+          {{ site.organization.address }}<br>
+          {{ site.organization.phone }}
+        </p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="swiss-col-3">
+        <span class="swiss-section-label">Navigate</span>
+        <h3 class="mb-4" style="font-size: var(--fluid-h4);">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/events/">Upcoming Events</a></li>
+          <li><a href="/blog/">Blog & Resources</a></li>
+          <li><a href="/get-involved/">Get Involved</a></li>
+          <li><a href="/about/">About Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Community -->
+      <div class="swiss-col-3">
+        <span class="swiss-section-label">Join</span>
+        <h3 class="mb-4" style="font-size: var(--fluid-h4);">Community</h3>
+        <ul class="space-y-2">
+          <li><a href="{{ site.links.discordCTA }}">Discord Community</a></li>
+          <li><a href="/events/">Join a Town Hall</a></li>
+          <li><a href="/get-involved/#volunteer">Volunteer</a></li>
+          <li><a href="/blog/feed.xml">RSS Feed</a></li>
+        </ul>
+      </div>
+      
+      <!-- Connect -->
+      <div class="swiss-col-2">
+        <span class="swiss-section-label">Social</span>
+        <h3 class="mb-4" style="font-size: var(--fluid-h4);">Connect</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="{{ site.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="{{ site.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              YouTube
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="border-t-2 border-swiss-gray-300 mt-8 pt-8 text-center text-sm text-swiss-gray-600">
+      <p>&copy; {{ '' | currentYear }} {{ site.organization.name }}. All rights reserved.</p>
+      <p class="mt-2">Empowering Newark residents with AI knowledge and community support.</p>
+    </div>
+  </div>
+</footer>

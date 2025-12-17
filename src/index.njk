@@ -1,0 +1,230 @@
+---
+layout: base.njk
+title: Empowering Newark with AI Knowledge
+description: Free AI town halls, training sessions, and community support for Newark residents. Learn about AI in plain language from NJIT students and local educators.
+---
+
+<!-- Hero Section -->
+<section class="swiss-section bg-swiss-gray-100">
+  <div class="swiss-container">
+    <div class="swiss-grid items-center">
+      <div class="swiss-col-7">
+        <span class="swiss-section-label">Welcome</span>
+        <h1 class="mb-6">
+          AI Education for <span class="text-swiss-red">Every</span> Newark Resident
+        </h1>
+        <p class="mb-8 text-swiss-gray-700" style="font-size: var(--fluid-body-lg);">
+          Free town halls, training sessions, and community support. No tech background needed—just bring your curiosity.
+        </p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="/events/" class="btn-swiss-red">
+            View Upcoming Events
+          </a>
+          <a href="/get-involved/" class="btn-swiss-outline">
+            Get Involved
+          </a>
+        </div>
+      </div>
+      <div class="swiss-col-5">
+        <div class="swiss-card">
+          <h2 class="mb-6" style="font-size: var(--fluid-h3);">What We Do</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-swiss-red font-bold text-xl">→</span>
+              <span>Host free AI town halls in plain language</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-swiss-red font-bold text-xl">→</span>
+              <span>Provide hands-on training sessions</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-swiss-red font-bold text-xl">→</span>
+              <span>Build a supportive Discord community</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-swiss-red font-bold text-xl">→</span>
+              <span>Share resources and educational content</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Events Preview -->
+<div class="swiss-divider"></div>
+<section class="swiss-section">
+  <div class="swiss-container">
+    <span class="swiss-section-label">Upcoming Events</span>
+    <div class="flex items-center justify-between mb-12">
+      <h2 style="font-size: var(--fluid-h2);">Upcoming Town Halls</h2>
+      <a href="/events/" class="font-semibold text-swiss-red hover:underline">
+        View All Events →
+      </a>
+    </div>
+    
+    {% set upcomingEvents = collections.events | limit(3) %}
+    {% if upcomingEvents.length > 0 %}
+    <div class="swiss-grid">
+      {% for event in upcomingEvents %}
+      <article class="swiss-col-4">
+        <div class="event-card">
+          <div class="mb-4">
+            <span class="event-tag {% if event.locationType == 'online' %}online{% endif %}">
+              {{ event.locationType }}
+            </span>
+          </div>
+          
+          <h3 class="mb-3" style="font-size: var(--fluid-h4);">
+            <a href="/events/{{ event.slug.current }}/" class="no-underline hover:text-swiss-red">
+              {{ event.title }}
+            </a>
+          </h3>
+          
+          <div class="mb-4 text-swiss-gray-600">
+            <p class="mb-1">{{ event.eventDate | dateFormat }}</p>
+            <p>{{ event.eventDate | timeFormat }}</p>
+          </div>
+          
+          <p class="mb-4">{{ event.excerpt }}</p>
+          
+          <a href="/events/{{ event.slug.current }}/" class="btn-swiss-red">
+            Register Now
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="swiss-border-accent py-8">
+      <p class="text-xl">New events coming soon! Join our Discord community to be the first to know.</p>
+      <a href="{{ site.links.discordCTA }}" class="btn-swiss mt-4">Join Discord</a>
+    </div>
+    {% endif %}
+
+    {% if cms and cms.upcomingEvents and cms.upcomingEvents.length > 0 %}
+    <div class="mt-12">
+      <span class="swiss-section-label">From CMS</span>
+      <h3 class="mb-6" style="font-size: var(--fluid-h3);">Upcoming (Sanity)</h3>
+      <div class="swiss-grid">
+        {% for e in cms.upcomingEvents | slice(0,2) %}
+        <article class="swiss-col-6">
+          <div class="swiss-card h-full">
+            <h4 class="mb-2" style="font-size: var(--fluid-h4);">{{ e.title }}</h4>
+            <p class="text-swiss-gray-600 mb-3">{{ e.eventDate | dateFormat }}{% if e.location %} • {{ e.location }}{% endif %}</p>
+            <p class="mb-2">{{ e.excerpt }}</p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Who We Serve -->
+<div class="swiss-divider"></div>
+<section class="swiss-section bg-swiss-gray-100">
+  <div class="swiss-container">
+    <span class="swiss-section-label text-center block">Community</span>
+    <h2 class="mb-12 text-center" style="font-size: var(--fluid-h2);">Who We Serve</h2>
+    
+    <div class="swiss-grid">
+      <div class="swiss-col-3">
+        <div class="swiss-card h-full">
+          <h3 class="mb-4" style="font-size: var(--fluid-h4);">Newark Residents</h3>
+          <p>Learn how AI can help with everyday tasks—from health questions to budgeting to productivity.</p>
+        </div>
+      </div>
+      
+      <div class="swiss-col-3">
+        <div class="swiss-card h-full">
+          <h3 class="mb-4" style="font-size: var(--fluid-h4);">Educators</h3>
+          <p>Discover how to introduce AI concepts to students and integrate AI literacy into your curriculum.</p>
+        </div>
+      </div>
+      
+      <div class="swiss-col-3">
+        <div class="swiss-card h-full">
+          <h3 class="mb-4" style="font-size: var(--fluid-h4);">Community Organizers</h3>
+          <p>Learn to facilitate AI discussions and help your community navigate this new technology.</p>
+        </div>
+      </div>
+      
+      <div class="swiss-col-3">
+        <div class="swiss-card h-full">
+          <h3 class="mb-4" style="font-size: var(--fluid-h4);">NJIT Students</h3>
+          <p>Volunteer to teach, practice communication skills, and give back to the Newark community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Blog Posts -->
+<div class="swiss-divider"></div>
+<section class="swiss-section">
+  <div class="swiss-container">
+    <span class="swiss-section-label">Knowledge Hub</span>
+    <div class="flex items-center justify-between mb-12">
+      <h2 style="font-size: var(--fluid-h2);">Latest Resources</h2>
+      <a href="/blog/" class="font-semibold text-swiss-red hover:underline">
+        View All Articles →
+      </a>
+    </div>
+    
+    {% set latestPosts = collections.blog | limit(3) %}
+    {% if latestPosts.length > 0 %}
+    <div class="swiss-grid">
+      {% for post in latestPosts %}
+      <article class="swiss-col-4">
+        <div class="swiss-card h-full">
+          <div class="mb-3 text-sm text-swiss-gray-600">
+            {{ post.publishedAt | dateFormat }}
+          </div>
+          
+          <h3 class="mb-3" style="font-size: var(--fluid-h4);">
+            <a href="/blog/{{ post.slug.current }}/" class="no-underline hover:text-swiss-red">
+              {{ post.title }}
+            </a>
+          </h3>
+          
+          <p class="mb-4">{{ post.description }}</p>
+          
+          <a href="/blog/{{ post.slug.current }}/" class="font-semibold text-swiss-red hover:underline">
+            Read More →
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="swiss-border-accent py-8">
+      <p class="text-xl">Educational content coming soon!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Community CTA -->
+<div class="swiss-divider"></div>
+<section class="swiss-section bg-swiss-black text-swiss-white">
+  <div class="swiss-container">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="swiss-section-label" style="color: var(--swiss-gray-400);">Connect</span>
+      <h2 class="mb-6" style="font-size: var(--fluid-h2);">Join Our Community</h2>
+      <p class="mb-8" style="font-size: var(--fluid-body-lg);">
+        Connect with other Newark residents learning about AI. Ask questions, share experiences, and stay updated on events in our Discord community.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="{{ site.links.discordCTA }}" class="btn-swiss-red">
+          Join Discord
+        </a>
+        <a href="/get-involved/" class="btn-swiss-outline" style="border-color: white; color: white;">
+          Learn About Volunteering
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

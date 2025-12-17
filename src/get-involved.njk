@@ -1,0 +1,340 @@
+---
+layout: base.njk
+title: Get Involved
+description: Join Newark AI Community as a volunteer, attendee, or community partner. Help us make AI education accessible to all Newark residents.
+---
+
+<section class="swiss-section">
+  <div class="swiss-container">
+    <div class="max-w-4xl mx-auto">
+      <span class="swiss-section-label">Join Us</span>
+      <h1 class="mb-8">Get Involved</h1>
+      
+      <div class="swiss-border-accent mb-12">
+        <p class="font-semibold text-swiss-gray-700" style="font-size: var(--fluid-body-lg);">
+          Whether you want to learn, teach, or support our mission, there are many ways to be part of the Newark AI Community.
+        </p>
+      </div>
+      
+      <!-- Ways to Get Involved -->
+      <div class="space-y-12 mb-16">
+        <!-- Attend Events -->
+        <div id="attend">
+          <div class="swiss-divider-red mb-8"></div>
+          <h2 class="mb-6" style="font-size: var(--fluid-h2);">Attend Our Events</h2>
+          <p class="mb-6" style="font-size: var(--fluid-body-lg);">
+            The easiest way to get involved is to attend one of our free town halls or training sessions. No registration fee, no prerequisites—just show up and learn.
+          </p>
+          <div class="swiss-card">
+            <h3 class="mb-4" style="font-size: var(--fluid-h4);">What to Expect</h3>
+            <ul class="space-y-2 mb-6">
+              <li>• Plain-language explanations of AI concepts</li>
+              <li>• Hands-on demonstrations and exercises</li>
+              <li>• Time for questions and discussion</li>
+              <li>• Resources to take home and practice</li>
+              <li>• Connection with other community members</li>
+            </ul>
+            <a href="/events/" class="btn-swiss-red">
+              View Upcoming Events
+            </a>
+          </div>
+        </div>
+        
+        <!-- Volunteer -->
+        <div id="volunteer">
+          <div class="swiss-divider-red mb-8"></div>
+          <h2 class="mb-6" style="font-size: var(--fluid-h2);">Volunteer</h2>
+          <p class="mb-6" style="font-size: var(--fluid-body-lg);">
+            Help us teach Newark residents about AI. We're looking for NJIT students, educators, and community members who want to give back.
+          </p>
+          
+          <div class="swiss-grid mb-8">
+            <div class="swiss-col-6">
+              <div class="swiss-card h-full">
+                <h3 class="mb-4" style="font-size: var(--fluid-h4);">Volunteer Instructors</h3>
+                <p class="mb-4">Lead town halls, teach training sessions, or create educational content.</p>
+                <p class="font-semibold">Requirements:</p>
+                <ul class="mb-4 space-y-1">
+                  <li>• Knowledge of AI basics</li>
+                  <li>• Ability to explain complex topics simply</li>
+                  <li>• Passion for community education</li>
+                  <li>• Commitment to 2-4 hours/month</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="swiss-col-6">
+              <div class="swiss-card h-full">
+                <h3 class="mb-4" style="font-size: var(--fluid-h4);">Community Coordinators</h3>
+                <p class="mb-4">Help organize events, manage Discord community, or coordinate partnerships.</p>
+                <p class="font-semibold">Requirements:</p>
+                <ul class="mb-4 space-y-1">
+                  <li>• Strong organizational skills</li>
+                  <li>• Experience with community engagement</li>
+                  <li>• Commitment to 3-5 hours/month</li>
+                  <li>• Tech-savvy (Discord, email, scheduling)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Volunteer Form -->
+          <div class="swiss-card">
+            <h3 class="mb-6" style="font-size: var(--fluid-h3);">Volunteer Application</h3>
+            <form id="volunteer-form" name="volunteer-signup" method="POST" class="space-y-6" netlify>
+              <div class="form-field">
+                <label for="vol-name" class="form-label">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="vol-name" 
+                  name="name" 
+                  required 
+                  class="form-input"
+                  aria-required="true"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-email" class="form-label">Email *</label>
+                <input 
+                  type="email" 
+                  id="vol-email" 
+                  name="email" 
+                  required 
+                  class="form-input"
+                  aria-required="true"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-phone" class="form-label">Phone</label>
+                <input 
+                  type="tel" 
+                  id="vol-phone" 
+                  name="phone" 
+                  class="form-input"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-affiliation" class="form-label">Affiliation</label>
+                <input 
+                  type="text" 
+                  id="vol-affiliation" 
+                  name="affiliation" 
+                  class="form-input"
+                  placeholder="e.g., NJIT student, Local teacher, Community member"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-role" class="form-label">Interested In *</label>
+                <select id="vol-role" name="role" required class="form-select" aria-required="true">
+                  <option value="">Select a role...</option>
+                  <option value="instructor">Volunteer Instructor</option>
+                  <option value="coordinator">Community Coordinator</option>
+                  <option value="content">Content Creator</option>
+                  <option value="other">Other (explain below)</option>
+                </select>
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-experience" class="form-label">Relevant Experience *</label>
+                <textarea 
+                  id="vol-experience" 
+                  name="experience" 
+                  required 
+                  class="form-textarea"
+                  aria-required="true"
+                  placeholder="Tell us about your AI knowledge, teaching experience, or community work..."
+                ></textarea>
+              </div>
+              
+              <div class="form-field">
+                <label for="vol-motivation" class="form-label">Why do you want to volunteer?</label>
+                <textarea 
+                  id="vol-motivation" 
+                  name="motivation" 
+                  class="form-textarea"
+                  placeholder="What motivates you to help with AI education in Newark?"
+                ></textarea>
+              </div>
+              
+              <button type="submit" class="btn-swiss-red">
+                Submit Application
+              </button>
+              
+              <p class="text-sm text-swiss-gray-600 mt-4">
+                We'll review your application and get back to you within 5 business days. Upon acceptance, you'll receive a Discord volunteer role and onboarding materials.
+              </p>
+
+              <div id="volunteer-success" class="mt-4 p-3 rounded bg-green-100 text-green-800" style="display: none;">
+                Thanks! Your submission was received.
+              </div>
+
+              <div id="volunteer-error" class="mt-4 p-3 rounded bg-red-100 text-red-800" style="display: none;">
+                Sorry, we could not send to Discord. Please try again.
+              </div>
+            </form>
+
+            <script>
+              // Send form submissions to Discord and optional Zapier (Airtable) webhooks
+              (() => {
+                const form = document.getElementById('volunteer-form');
+                if (!form) return;
+
+                const DISCORD_WEBHOOK = '{{ site.integrations.discord.webhookSubmissions }}';
+                const ZAPIER_WEBHOOK = '{{ site.integrations.zapier.webhookSubmissions }}';
+
+                const successBanner = document.getElementById('volunteer-success');
+                const errorBanner = document.getElementById('volunteer-error');
+                const hideBanners = () => {
+                  if (successBanner) successBanner.style.display = 'none';
+                  if (errorBanner) errorBanner.style.display = 'none';
+                };
+
+                form.addEventListener('submit', async (e) => {
+                  e.preventDefault();
+                  hideBanners();
+
+                  const data = Object.fromEntries(new FormData(form));
+
+                  // Discord payload
+                  const discordPayload = {
+                    content: '🎫 **New Volunteer Signup!**',
+                    embeds: [
+                      {
+                        title: data.name || 'New submission',
+                        color: 0xe03131,
+                        fields: [
+                          { name: '📧 Email', value: data.email || '—', inline: true },
+                          { name: '📱 Phone', value: data.phone || '—', inline: true },
+                          { name: '🏢 Affiliation', value: data.affiliation || '—', inline: true },
+                          { name: '👤 Role Interest', value: data.role || '—', inline: true },
+                          { name: '📚 Relevant Experience', value: data.experience || '—', inline: false },
+                          { name: '💡 Why Volunteer', value: data.motivation || '—', inline: false },
+                        ],
+                        footer: { text: new Date().toLocaleString() },
+                      },
+                    ],
+                  };
+
+                  // Zapier payload (simple key-value for Airtable step)
+                  const zapierPayload = {
+                    name: data.name || '',
+                    email: data.email || '',
+                    phone: data.phone || '',
+                    affiliation: data.affiliation || '',
+                    role: data.role || '',
+                    experience: data.experience || '',
+                    motivation: data.motivation || '',
+                    submitted_at: new Date().toISOString(),
+                    source: 'website-volunteer-form'
+                  };
+
+                  const requests = [];
+                  // Always send to Discord
+                  if (DISCORD_WEBHOOK) {
+                    requests.push(
+                      fetch(DISCORD_WEBHOOK, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(discordPayload),
+                      })
+                    );
+                  }
+                  // Optionally send to Zapier
+                  if (ZAPIER_WEBHOOK) {
+                    requests.push(
+                      fetch(ZAPIER_WEBHOOK, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(zapierPayload),
+                      })
+                    );
+                  }
+
+                  try {
+                    if (requests.length === 0) throw new Error('No endpoints configured');
+                    const results = await Promise.allSettled(requests);
+                    const anySuccess = results.some(r => r.status === 'fulfilled' && (!r.value || r.value.ok !== false));
+                    if (!anySuccess) throw new Error('All endpoints failed');
+
+                    if (successBanner) successBanner.style.display = 'block';
+                    form.reset();
+                  } catch (error) {
+                    console.error('Submission error:', error);
+                    if (errorBanner) errorBanner.style.display = 'block';
+                  }
+                });
+              })();
+            </script>
+          </div>
+        </div>
+        
+        <!-- Join Discord -->
+        <div id="discord">
+          <h2 class="text-3xl font-bold mb-6">Join Our Discord Community</h2>
+          <p class="text-lg mb-6">
+            Connect with other Newark residents learning about AI. Our Discord server is a supportive space for questions, discussions, and ongoing learning.
+          </p>
+          
+          <div class="swiss-card">
+            <h3 class="text-xl font-bold mb-4">Discord Channels</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div>
+                <p class="font-semibold mb-2">#announcements</p>
+                <p class="text-sm text-swiss-gray-600">Event updates and important news</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">#events</p>
+                <p class="text-sm text-swiss-gray-600">Discuss upcoming and past town halls</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">#ai-questions</p>
+                <p class="text-sm text-swiss-gray-600">Ask anything about AI</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">#volunteers</p>
+                <p class="text-sm text-swiss-gray-600">Coordination for volunteer instructors</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">#resources</p>
+                <p class="text-sm text-swiss-gray-600">Share helpful articles and tools</p>
+              </div>
+              <div>
+                <p class="font-semibold mb-2">#introductions</p>
+                <p class="text-sm text-swiss-gray-600">Introduce yourself to the community</p>
+              </div>
+            </div>
+            <a href="{{ site.links.discordCTA }}" class="btn-swiss-red">
+              Join Discord Server
+            </a>
+          </div>
+        </div>
+        
+        <!-- Partner With Us -->
+        <div id="partner">
+          <h2 class="text-3xl font-bold mb-6">Partner With Us</h2>
+          <p class="text-lg mb-6">
+            Are you a school, library, community center, or organization interested in bringing AI education to your community? Let's work together.
+          </p>
+          
+          <div class="swiss-card">
+            <h3 class="text-xl font-bold mb-4">Partnership Opportunities</h3>
+            <ul class="space-y-2 mb-6">
+              <li>• Host town halls at your location</li>
+              <li>• Co-create educational content</li>
+              <li>• Integrate AI literacy into existing programs</li>
+              <li>• Cross-promote events and resources</li>
+              <li>• Collaborate on grant applications</li>
+            </ul>
+            <p class="mb-6">
+              Contact us at <a href="mailto:{{ site.email }}" class="font-semibold text-swiss-red">{{ site.email }}</a> to discuss partnership opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

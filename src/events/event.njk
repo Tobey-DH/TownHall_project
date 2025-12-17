@@ -1,0 +1,118 @@
+---
+pagination:
+  data: collections.events
+  size: 1
+  alias: event
+permalink: "/events/{{ event.slug.current }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ event.title }}"
+  description: "{{ event.excerpt }}"
+---
+
+<section class="swiss-section">
+  <div class="swiss-container max-w-4xl">
+    <!-- Breadcrumb -->
+    <nav class="mb-6 text-sm">
+      <a href="/" class="text-swiss-red hover:underline">Home</a>
+      <span class="mx-2">→</span>
+      <a href="/events/" class="text-swiss-red hover:underline">Events</a>
+      <span class="mx-2">→</span>
+      <span class="text-swiss-gray-600">{{ event.title }}</span>
+    </nav>
+
+    <!-- Event Header -->
+    <article>
+      <div class="mb-6">
+        <span class="event-tag {% if event.locationType == 'online' %}online{% endif %}">
+          {{ event.locationType }}
+        </span>
+        {% if event.featured %}
+        <span class="event-tag ml-2" style="background-color: var(--swiss-red); color: white;">
+          Featured Event
+        </span>
+        {% endif %}
+      </div>
+
+      <h1 class="mb-6">{{ event.title }}</h1>
+
+      <!-- Event Details Card -->
+      <div class="swiss-card mb-8">
+        <div class="swiss-grid">
+          <div class="swiss-col-6">
+            <h3 class="text-sm font-bold text-swiss-gray-600 mb-2">Date & Time</h3>
+            <p class="mb-1">{{ event.eventDate | dateFormat }}</p>
+            <p>{{ event.eventDate | timeFormat }}</p>
+          </div>
+          <div class="swiss-col-6">
+            <h3 class="text-sm font-bold text-swiss-gray-600 mb-2">Location</h3>
+            <p>{{ event.location }}</p>
+          </div>
+        </div>
+        {% if event.capacity %}
+        <div class="mt-4 pt-4 border-t border-swiss-gray-200">
+          <p class="text-sm text-swiss-gray-600">
+            <strong>Capacity:</strong> {{ event.capacity }} attendees
+          </p>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Event Description -->
+      <div class="prose prose-lg max-w-none mb-8">
+        <p class="text-xl text-swiss-gray-700 mb-6">{{ event.excerpt }}</p>
+        
+        {% if event.content %}
+        <div class="event-content">
+          {% for block in event.content %}
+            {% if block._type == "block" %}
+              {% if block.style == "h2" %}
+                <h2>{{ block.children[0].text }}</h2>
+              {% elif block.style == "h3" %}
+                <h3>{{ block.children[0].text }}</h3>
+              {% else %}
+                <p>{{ block.children[0].text }}</p>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Learning Outcomes -->
+      {% if event.learningOutcomes and event.learningOutcomes.length > 0 %}
+      <div class="swiss-border-accent mb-8">
+        <h2 class="mb-4" style="font-size: var(--fluid-h3);">What You'll Learn</h2>
+        <ul class="space-y-3">
+          {% for outcome in event.learningOutcomes %}
+          <li class="flex items-start gap-3">
+            <span class="text-swiss-red font-bold text-xl flex-shrink-0">✓</span>
+            <span>{{ outcome }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      <!-- CTA Section -->
+      <div class="swiss-card bg-swiss-gray-50 text-center mt-12">
+        <h2 class="mb-4" style="font-size: var(--fluid-h3);">Ready to Join Us?</h2>
+        <p class="mb-6">Registration is free and open to all Newark residents.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          {% if event.recording %}
+          <a href="{{ event.recording }}" class="btn-swiss-red" target="_blank" rel="noopener">
+            Watch Recording
+          </a>
+          {% else %}
+          <a href="#register" class="btn-swiss-red">
+            Register Now
+          </a>
+          {% endif %}
+          <a href="/events/" class="btn-swiss-outline">
+            View All Events
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<header class="site-header" role="banner" data-component="header">
+  <div class="swiss-container">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="site-logo" aria-label="Newark AI Community Town Hall - Home">
+        Newark AI Community
+      </a>
+      
+      <!-- Mobile menu button -->
+      <button 
+        type="button"
+        class="mobile-menu-button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        aria-label="Toggle navigation menu"
+        id="mobile-menu-toggle"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      
+      <!-- Navigation -->
+      <nav id="main-navigation" aria-label="Main navigation">
+        <ul class="site-nav">
+          {% for item in site.navigation %}
+          <li>
+            <a 
+              href="{{ item.url }}"
+              {% if page.url == item.url %}aria-current="page" class="active"{% endif %}
+            >
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: Blog & Resources
+description: Plain-language guides about AI. Learn what AI is, how it can help you, and what you need to know about privacy and safety.
+---
+
+<section class="swiss-section">
+  <div class="swiss-container">
+    <div class="max-w-3xl mb-12">
+      <span class="swiss-section-label">Knowledge Hub</span>
+      <h1 class="mb-4">Blog & Resources</h1>
+      <p style="font-size: var(--fluid-body-lg);">Straightforward, jargon-free articles about AI and how it affects your daily life. Written by community members, for community members.</p>
+    </div>
+    
+    {% if collections.blog.length > 0 %}
+    <div class="swiss-grid">
+      {% for post in collections.blog %}
+      <article class="swiss-col-4 mb-8">
+        <div class="swiss-card h-full">
+          <div class="mb-3 text-sm text-swiss-gray-600">
+            {{ post.publishedAt | dateFormat }}
+          </div>
+          
+          <h2 class="mb-3" style="font-size: var(--fluid-h4);">
+            <a href="/blog/{{ post.slug.current }}/" class="no-underline hover:text-swiss-red">
+              {{ post.title }}
+            </a>
+          </h2>
+          
+          <p class="mb-4 flex-1">{{ post.description }}</p>
+          
+          <div class="mt-auto">
+            <a href="/blog/{{ post.slug.current }}/" class="font-semibold text-swiss-red hover:underline">
+              Read More →
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="swiss-border-accent py-8">
+      <p class="text-xl">Blog posts coming soon! Join our community to stay updated.</p>
+      <a href="{{ site.social.discord }}" class="btn-swiss mt-4">Join Discord</a>
+    </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,93 @@
+---
+layout: base.njk
+title: Upcoming Events & Town Halls
+description: Join our free AI town halls and training sessions. Learn about AI in plain language with support from NJIT students and community educators.
+---
+
+<section class="swiss-section">
+  <div class="swiss-container">
+    <div class="max-w-3xl mb-12">
+      <span class="swiss-section-label">Events</span>
+      <h1 class="mb-4">Upcoming Events & Town Halls</h1>
+      <p style="font-size: var(--fluid-body-lg);">Join us for free AI education sessions designed for Newark residents. No technical background needed—just curiosity and a desire to learn!</p>
+    </div>
+    
+    {% if collections.events.length > 0 %}
+    <div class="swiss-grid">
+      {% for event in collections.events %}
+      <article class="swiss-col-4 mb-8">
+        <div class="event-card">
+          <div class="mb-4">
+            <span class="event-tag {% if event.locationType == 'online' %}online{% endif %}">
+              {{ event.locationType }}
+            </span>
+          </div>
+          
+          <h2 class="mb-3" style="font-size: var(--fluid-h4);">
+            <a href="/events/{{ event.slug.current }}/" class="no-underline hover:text-swiss-red">
+              {{ event.title }}
+            </a>
+          </h2>
+          
+          <div class="mb-4 text-swiss-gray-600">
+            <p class="mb-1">
+              <strong>Date:</strong> {{ event.eventDate | dateFormat }}
+            </p>
+            <p class="mb-1">
+              <strong>Time:</strong> {{ event.eventDate | timeFormat }}
+            </p>
+            <p>
+              <strong>Location:</strong> {{ event.location }}
+            </p>
+          </div>
+          
+          <p class="mb-4 flex-1">{{ event.excerpt }}</p>
+          
+          <div class="mt-auto">
+            <a href="/events/{{ event.slug.current }}/" class="btn-swiss-red">
+              Learn More & Register
+            </a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="swiss-border-accent py-8">
+      <p class="text-xl">No upcoming events scheduled at this time. Check back soon or join our Discord community to stay updated!</p>
+      <a href="{{ site.social.discord }}" class="btn-swiss mt-4">Join Discord</a>
+    </div>
+    {% endif %}
+    
+    <!-- Past Events -->
+    {% if collections.pastEvents.length > 0 %}
+    <div class="swiss-divider my-16"></div>
+    <div class="mt-8">
+      <span class="swiss-section-label">Archive</span>
+      <h2 class="mb-8" style="font-size: var(--fluid-h2);">Past Events</h2>
+      <div class="space-y-6">
+        {% for event in collections.pastEvents | limit(6) %}
+        <article class="flex items-start gap-6 pb-6 border-b border-swiss-gray-200">
+          <div class="flex-shrink-0 w-24 text-center">
+            <div class="text-sm font-bold text-swiss-gray-600">
+              {{ event.eventDate | dateFormat }}
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="mb-2" style="font-size: var(--fluid-h4);">
+              <a href="/events/{{ event.slug.current }}/">{{ event.title }}</a>
+            </h3>
+            <p class="text-swiss-gray-600">{{ event.excerpt }}</p>
+            {% if event.recording %}
+            <a href="{{ event.recording }}" class="text-swiss-red font-semibold mt-2 inline-block">
+              Watch Recording →
+            </a>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>

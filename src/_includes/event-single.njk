@@ -1,0 +1,150 @@
+---
+layout: base.njk
+---
+
+<article class="swiss-section">
+  <div class="swiss-container">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <ol class="flex items-center gap-2 text-sm text-swiss-gray-600">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/events/">Events</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page">{{ title }}</li>
+      </ol>
+    </nav>
+    
+    <div class="swiss-grid">
+      <!-- Main Content -->
+      <div class="swiss-col-8">
+        <header class="mb-8">
+          <div class="mb-4">
+            <span class="event-tag {% if locationType == 'online' %}online{% endif %}">
+              {{ locationType }}
+            </span>
+          </div>
+          
+          <h1 class="mb-6">{{ title }}</h1>
+          
+          <div class="flex flex-wrap gap-6 text-lg mb-6">
+            <div>
+              <strong>Date:</strong> {{ eventDate | dateFormat }}
+            </div>
+            <div>
+              <strong>Time:</strong> {{ eventDate | timeFormat }}
+            </div>
+          </div>
+          
+          <div class="text-lg mb-6">
+            <strong>Location:</strong> {{ location }}
+          </div>
+        </header>
+        
+        <div class="blog-content mb-12">
+          {{ content | safe }}
+        </div>
+        
+        {% if recording %}
+        <div class="swiss-border-accent mb-12">
+          <h2 class="mb-4" style="font-size: var(--fluid-h3);">Recording Available</h2>
+          <p class="mb-4">This event has been recorded. Watch the session to learn at your own pace.</p>
+          <a href="{{ recording }}" class="btn-swiss" target="_blank" rel="noopener noreferrer">
+            Watch Recording
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      
+      <!-- Sidebar -->
+      <aside class="swiss-col-4">
+        <div class="sticky top-24">
+          <!-- Registration Form -->
+          <div class="swiss-card mb-8">
+            <h2 class="mb-4" style="font-size: var(--fluid-h3);">Register for This Event</h2>
+            <p class="mb-6">Sign up to attend this free AI education session. We'll send you a confirmation email with all the details.</p>
+            
+            <form action="/api/register" method="POST" class="space-y-4">
+              <input type="hidden" name="eventId" value="{{ slug }}">
+              <input type="hidden" name="eventTitle" value="{{ title }}">
+              
+              <div class="form-field">
+                <label for="name" class="form-label">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  class="form-input"
+                  aria-required="true"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="email" class="form-label">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  class="form-input"
+                  aria-required="true"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="neighborhood" class="form-label">Neighborhood</label>
+                <input 
+                  type="text" 
+                  id="neighborhood" 
+                  name="neighborhood" 
+                  class="form-input"
+                  placeholder="e.g., Ironbound, Downtown"
+                >
+              </div>
+              
+              <div class="form-field">
+                <label for="interestLevel" class="form-label">Interest Level</label>
+                <select id="interestLevel" name="interestLevel" class="form-select">
+                  <option value="">Select...</option>
+                  <option value="beginner">New to AI - Just curious</option>
+                  <option value="interested">Interested - Want to learn more</option>
+                  <option value="experienced">Some experience - Want to deepen knowledge</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn-swiss-red w-full">
+                Register Now
+              </button>
+              
+              <p class="text-xs text-swiss-gray-600 mt-4">
+                By registering, you'll be added to our community mailing list. We'll also send you a Discord invite to join ongoing conversations.
+              </p>
+            </form>
+          </div>
+          
+          <!-- What You'll Learn -->
+          {% if learningOutcomes %}
+          <div class="swiss-border-accent mb-8">
+            <h3 class="mb-4" style="font-size: var(--fluid-h4);">What You'll Learn</h3>
+            <ul class="space-y-2">
+              {% for outcome in learningOutcomes %}
+              <li>{{ outcome }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+          
+          <!-- Community -->
+          <div class="swiss-card">
+            <h3 class="mb-4" style="font-size: var(--fluid-h4);">Join Our Community</h3>
+            <p class="mb-4">Connect with other Newark residents learning about AI. Ask questions, share experiences, and stay updated on events.</p>
+            <a href="{{ site.social.discord }}" class="btn-swiss-outline w-full" target="_blank" rel="noopener noreferrer">
+              Join Discord
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</article>

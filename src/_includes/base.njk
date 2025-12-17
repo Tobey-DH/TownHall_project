@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if tags and 'blog' in tags %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  
+  {% if tags and 'blog' in tags %}
+  <meta property="article:published_time" content="{{ date | dateToISO }}">
+  <meta property="article:author" content="{{ site.author }}">
+  {% endif %}
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.organization.name }}",
+        "url": "{{ site.url }}",
+        "description": "{{ site.description }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Newark",
+          "addressRegion": "NJ"
+        },
+        "sameAs": [
+          "{{ site.social.discord }}",
+          "{{ site.social.twitter }}",
+          "{{ site.social.linkedin }}",
+          "{{ site.social.youtube }}"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}",
+        "name": "{{ site.title }}",
+        "description": "{{ site.description }}",
+        "publisher": {
+          "@id": "{{ site.url }}/#organization"
+        }
+      }
+      {% if tags and 'blog' in tags %}
+      ,{
+        "@type": "BlogPosting",
+        "@id": "{{ site.url }}{{ page.url }}#article",
+        "headline": "{{ title }}",
+        "description": "{{ description }}",
+        "datePublished": "{{ date | dateToISO }}",
+        "author": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        },
+        "publisher": {
+          "@id": "{{ site.url }}/#organization"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ site.url }}{{ page.url }}"
+        }
+      }
+      {% endif %}
+      {% if tags and 'event' in tags %}
+      ,{
+        "@type": "Event",
+        "@id": "{{ site.url }}{{ page.url }}#event",
+        "name": "{{ title }}",
+        "description": "{{ description }}",
+        "startDate": "{{ eventDate | dateToISO }}",
+        "location": {
+          "@type": "{% if locationType == 'online' %}VirtualLocation{% else %}Place{% endif %}",
+          {% if locationType == 'online' %}
+          "url": "{{ location }}"
+          {% else %}
+          "name": "{{ location }}",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Newark",
+            "addressRegion": "NJ"
+          }
+          {% endif %}
+        },
+        "organizer": {
+          "@id": "{{ site.url }}/#organization"
+        },
+        "isAccessibleForFree": true,
+        "eventStatus": "https://schema.org/EventScheduled"
+      }
+      {% endif %}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>
+  
+  {% include "header.njk" %}
+  
+  <main id="main-content" class="flex-1">
+    {{ content | safe }}
+  </main>
+  
+  {% include "footer.njk" %}
+  
+  <script src="/js/mobile-menu.js"></script>
+
+  <!-- Consent Banner + Analytics Gating -->
+  <div id="cookie-consent" style="position: fixed; inset-inline: 1rem; bottom: 1rem; z-index: 50; display: none;">
+    <div style="max-width: 42rem; margin-inline: auto;" class="swiss-card">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <p class="text-sm text-swiss-gray-800">{{ site.consent.message }}</p>
+        <div class="flex gap-2">
+          <button id="cookie-accept" class="btn-swiss-red">{{ site.consent.acceptText }}</button>
+          <button id="cookie-decline" class="btn-swiss-outline">{{ site.consent.declineText }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const CONSENT_KEY = 'cookieConsent';
+      const consentBanner = document.getElementById('cookie-consent');
+      const acceptBtn = document.getElementById('cookie-accept');
+      const declineBtn = document.getElementById('cookie-decline');
+
+      function hasAccepted() { return localStorage.getItem(CONSENT_KEY) === 'accepted'; }
+      function hasDecided() { return ['accepted', 'declined'].includes(localStorage.getItem(CONSENT_KEY)); }
+
+      function loadAnalytics() {
+        try {
+          const provider = '{{ site.analytics.provider }}';
+          if ('{{ site.analytics.enabled }}' !== 'true' && '{{ site.analytics.enabled }}' !== 'True') return;
+
+          if (provider === 'plausible') {
+            var s = document.createElement('script');
+            s.defer = true;
+            s.setAttribute('data-domain', '{{ site.analytics.plausibleDomain }}');
+            s.src = '{{ site.analytics.plausibleSrc }}';
+            document.head.appendChild(s);
+          } else if (provider === 'ga4' && '{{ site.analytics.ga4MeasurementId }}') {
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4MeasurementId }}';
+            document.head.appendChild(gtagScript);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '{{ site.analytics.ga4MeasurementId }}', { anonymize_ip: true });
+          }
+        } catch (e) { /* no-op */ }
+      }
+
+      // Initial state
+      if (!hasDecided()) {
+        consentBanner.style.display = 'block';
+      } else if (hasAccepted()) {
+        loadAnalytics();
+      }
+
+      // Handlers
+      if (acceptBtn) acceptBtn.addEventListener('click', function() {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        consentBanner.style.display = 'none';
+        loadAnalytics();
+      });
+      if (declineBtn) declineBtn.addEventListener('click', function() {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        consentBanner.style.display = 'none';
+      });
+    })();
+  </script>
+</body>
+</html>

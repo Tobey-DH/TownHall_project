@@ -78,9 +78,6 @@ jobs:
           ANALYTICS_PROVIDER: plausible
           PLAUSIBLE_DOMAIN: example.org
 
-      - name: Ensure .nojekyll exists
-        run: touch ./_site/.nojekyll
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Newark AI Community Town Hall</title>
+  <subtitle>Empowering Newark residents with AI knowledge through free town halls, training sessions, and community support.</subtitle>
+  <link href="https://newark-ai-townhall.org/blog/feed.xml" rel="self"/>
+  <link href="https://newark-ai-townhall.org/"/>
+  <updated>2026-01-14T17:00:00.000Z</updated>
+  <id>https://newark-ai-townhall.org/</id>
+  <author>
+    <name>Newark AI Community</name>
+    <email>hello@newark-ai-townhall.org</email>
+  </author>
+  
+  <entry>
+    <title>AI and Your Privacy: What You Need to Know</title>
+    <link href="https://newark-ai-townhall.org/blog/ai-privacy-guide/"/>
+    <updated>2026-01-14T17:00:00.000Z</updated>
+    <id>https://newark-ai-townhall.org/blog/ai-privacy-guide/</id>
+    <content type="html">A straightforward guide to protecting your privacy when using AI tools. Learn what data is collected, how it&#39;s used, and simple steps to stay safe.</content>
+  </entry>
+  
+  <entry>
+    <title>How AI Can Help Your Small Business Save Time and Money</title>
+    <link href="https://newark-ai-townhall.org/blog/ai-help-small-business/"/>
+    <updated>2026-01-12T17:00:00.000Z</updated>
+    <id>https://newark-ai-townhall.org/blog/ai-help-small-business/</id>
+    <content type="html">Discover free AI tools that can help your Newark small business with marketing, customer service, bookkeeping, and more—no tech skills required.</content>
+  </entry>
+  
+  <entry>
+    <title>What is AI? A Simple Explanation for Newark Residents</title>
+    <link href="https://newark-ai-townhall.org/blog/what-is-ai-simple-explanation/"/>
+    <updated>2026-01-10T17:00:00.000Z</updated>
+    <id>https://newark-ai-townhall.org/blog/what-is-ai-simple-explanation/</id>
+    <content type="html">Artificial intelligence doesn&#39;t have to be complicated. Learn what AI really is, how it works, and why it matters to you—explained in plain English without the tech jargon.</content>
+  </entry>
+  
+</feed>

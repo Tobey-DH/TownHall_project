@@ -44,6 +44,19 @@
   --swiss-grid-margin: 1rem;
 }
 
+/* Utility color helpers */
+.bg-swiss-black {
+  background-color: var(--swiss-black);
+}
+
+.text-swiss-white {
+  color: var(--swiss-white);
+}
+
+.text-swiss-gray-400 {
+  color: var(--swiss-gray-400);
+}
+
 @media (min-width: 768px) {
   :root {
     --swiss-grid-margin: 2rem;
@@ -235,36 +248,45 @@
   .btn-swiss-red {
     background-color: var(--swiss-red);
     border-color: var(--swiss-red);
-    color: var(--swiss-white);
+  }
+
+  /* Banner Beginner - Swiss Design */
+  .banner-beginner {
+    animation: slideDown 0.4s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .banner-beginner a:hover {
+    text-decoration: none;
+  }
+
+  /* Swiss Card with proper hierarchy */
+  .swiss-card {
+    background-color: var(--swiss-white);
+    border: 1px solid var(--swiss-gray-200);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .swiss-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
   }
   
   .btn-swiss-red:hover {
     background-color: var(--swiss-white);
     color: var(--swiss-red);
-  }
-  
-  /* Card component */
-  .swiss-card {
-    border: 2px solid var(--swiss-black);
-    padding: var(--space-3xl);
-    background-color: var(--swiss-white);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-  }
-  
-  .swiss-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--swiss-red);
-  }
-  
-  .swiss-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
   
   /* Border accent */

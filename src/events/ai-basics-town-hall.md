@@ -18,36 +18,38 @@ learningOutcomes:
   - Ask questions in a supportive environment
 ---
 
-## About This Town Hall
+## What You'll Learn (In 60 Minutes)
 
-Join us for a beginner-friendly introduction to artificial intelligence! This session is designed for Newark residents who are curious about AI but don't have a technical background.
+**Never heard of AI? Perfect!** This is our gentlest introduction—designed for complete beginners.
 
-We'll cover:
+1. **What AI actually is** (explained like you're talking to a friend, not a computer scientist)
+2. **How tools like ChatGPT work** (the simple version—no math!)
+3. **3 ways you can use AI today** (even if you've never tried it before)
 
-### What Is AI?
-- Simple explanations without jargon
-- The difference between AI, machine learning, and automation
-- Real-world examples you encounter every day
+## What You Need
 
-### How Does AI Work?
-- The basics of how AI "learns"
-- Why AI sometimes makes mistakes
-- What data has to do with it
+✓ **No laptop required** (just come listen and ask questions)  
+✓ **No AI experience** (seriously—we start from zero)  
+✓ **Bring your curiosity** (and any questions you've been afraid to ask)
 
-### Practical Applications
-- Using AI assistants like ChatGPT
-- AI tools for everyday tasks
-- Privacy and safety considerations
+## What Happens After
 
-### Open Q&A
-Bring all your questions! No question is too basic or too complex.
+- Get a simple **1-page guide**: "How to Try AI for the First Time"
+- Join our Discord to ask follow-up questions (we respond same-day)
+- Optional: Sign up for our hands-on workshop next month
 
-## Who Should Attend?
+**Questions we'll answer:**
+- "What even is AI?"
+- "Is it safe to use ChatGPT?"
+- "Will AI take my job?"
+- "How do I get started?"
 
-This event is perfect for:
-- Anyone curious about AI
-- People who hear about AI in the news and want to understand it better
-- Newark residents looking to learn practical skills
+## Who This Is For
+
+✓ Complete beginners who've never touched AI  
+✓ People who feel intimidated by technology  
+✓ Anyone who hears about AI and wants to understand it  
+✓ Newark residents looking for judgment-free learning
 - Anyone intimidated by technology—we promise to keep it simple!
 
 ## What to Bring

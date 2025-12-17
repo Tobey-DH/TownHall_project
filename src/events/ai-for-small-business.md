@@ -18,35 +18,40 @@ learningOutcomes:
   - Network with other Newark small business owners
 ---
 
-## About This Workshop
+## What You'll Learn (In 90 Minutes)
 
-Running a small business means wearing many hats. This workshop shows you how AI can help with marketing, customer service, scheduling, and more—without breaking the bank or requiring technical expertise.
+**No fluff. Just 3 AI tools you can use in your business Monday morning.**
 
-## What We'll Cover
+1. **Write better emails in 30 seconds** (using ChatGPT—free, no install)
+2. **Create social media posts automatically** (free tool, no design skills needed)
+3. **Track customer inquiries without spreadsheets** (simple AI assistant)
 
-### Time-Saving AI Tools
-- Email and social media management
-- Scheduling and appointment booking
-- Automated customer responses
-- Content creation assistance
+## What You Need
 
-### Marketing with AI
-- Writing better product descriptions
-- Creating social media posts
-- Understanding your customers better
-- SEO and online visibility
+✓ **A computer or tablet** (phone works but harder to follow along)  
+✓ **Internet connection** (everything is browser-based—no software to install)  
+✓ **Bring your laptop** (optional but recommended for hands-on practice)
 
-### Customer Service Enhancement
-- Chatbots that actually help
-- Personalized customer experiences
-- Review management
-- Follow-up automation
+## What Happens After
 
-### Real Talk: Costs and Benefits
-- Free vs. paid AI tools
-- Return on investment
-- Common pitfalls to avoid
-- When AI isn't the answer
+- Get a **PDF guide**: "5 AI Tools Every Small Business Should Use"
+- Join our monthly **"Ask an AI Expert"** Q&A (optional)
+- Access our Discord for quick questions (we respond same-day)
+
+**Typical time savings:** 3-5 hours/week once you implement 2-3 tools.
+
+## Real Examples We'll Show
+
+- **Bakery owner:** Auto-generates Instagram captions and responds to customer messages
+- **Hair salon:** Books appointments and sends reminders automatically
+- **Contractor:** Creates professional quotes in minutes instead of hours
+
+## Who This Is For
+
+✓ Newark small business owners (retail, service, food, any industry)  
+✓ People tired of wasting time on repetitive tasks  
+✓ Anyone skeptical of AI hype (we'll be honest about what works and what doesn't)  
+✓ **No tech skills required**—if you can use email, you can do this
 
 ## Who Should Attend?
 

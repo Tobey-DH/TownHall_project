@@ -18,35 +18,40 @@ learningOutcomes:
   - Make informed decisions about AI tool usage
 ---
 
-## About This Town Hall
+## What You'll Learn (In 60 Minutes)
 
-AI tools can be incredibly helpful, but they also raise important questions about privacy and safety. This session gives you practical knowledge to use AI confidently and safely.
+**Worried about what AI knows about you? We'll show you simple ways to stay safe.**
 
-## What We'll Cover
+1. **What AI tools actually collect** (and what you should NEVER share)
+2. **3 settings to change right now** (in ChatGPT, Alexa, Google, etc.)
+3. **How to spot AI scams** (deepfakes, fake voices, phishing)
 
-### Understanding AI Data Collection
-- What information do AI tools collect?
-- How is your data used and stored?
-- Reading privacy policies (the important parts)
-- Differences between free and paid tools
+## What You Need
 
-### Privacy Protection Strategies
-- Settings you should change
-- What not to share with AI
-- Anonymous and privacy-focused alternatives
-- Children and AI: special considerations
+✓ **No laptop required** (but bring one if you want to change settings during the session)  
+✓ **Bring your questions** ("Is ChatGPT reading my emails?" "Can AI steal my identity?")  
+✓ **No tech background needed** (we explain everything in plain English)
 
-### Recognizing AI Risks
-- Spotting AI-generated scams
-- Understanding deepfakes
-- Misinformation and AI
-- When AI gives wrong or harmful advice
+## What Happens After
 
-### Making Informed Choices
-- Evaluating new AI tools
-- Balancing convenience and privacy
-- When to use AI vs. when not to
-- Your rights and protections
+- Get a **printable checklist**: "5 Ways to Use AI Safely"
+- Access our **Discord #ai-safety channel** for ongoing Q&A
+- Optional: Schedule a 1-on-1 privacy review of your AI tools (free for Newark residents)
+
+## Real Questions We'll Answer
+
+- "Does ChatGPT save everything I type?"
+- "Can my boss see what I ask AI at work?"
+- "How do I protect my kids from AI risks?"
+- "Are AI voice clones real? How do I spot them?"
+- "Should I pay for ChatGPT Plus for better privacy?"
+
+## Who This Is For
+
+✓ Anyone using ChatGPT, Alexa, Siri, or Google Assistant  
+✓ Parents worried about AI and their children  
+✓ People who've heard scary AI stories and want facts  
+✓ Newark residents who want to use AI **without** giving up privacy
 
 ## Who Should Attend?
 

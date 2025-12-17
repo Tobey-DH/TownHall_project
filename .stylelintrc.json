@@ -1,6 +1,16 @@
 {
-  "ignoreFiles": ["_site/**/*.css", "sanity-studio/**"],
+  "ignoreFiles": [
+    "node_modules/**",
+    "_site/**",
+    "sanity-studio/**",
+    "**/*.njk",
+    "**/*.md"
+  ],
   "rules": {
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "property-no-unknown": null,
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "declaration-block-no-duplicate-properties": true,

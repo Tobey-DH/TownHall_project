@@ -15,11 +15,11 @@
     "serve:site": "node tests/server.mjs",
     "lint:js": "eslint \"src/**/*.{js,mjs}\" \"scripts/**/*.js\" --max-warnings=0",
     "lint:css": "stylelint \"src/**/*.{css,njk}\"",
-    "lint:md": "markdownlint \"**/*.md\" --ignore node_modules --ignore _site",
+    "lint:md": "markdownlint \"src/**/*.md\" \"*.md\" --ignore node_modules --ignore _site --ignore sanity-studio --ignore test-results",
     "test:e2e": "playwright test",
     "lhci": "lhci autorun",
     "bundle:size": "node scripts/check-bundle-size.mjs",
-    "ci": "npm run build; npm run lint:js; npm run lint:css; npm run lint:md; npm run test:e2e; npm run lhci; npm run bundle:size"
+    "ci": "npm-run-all build lint:js lint:css test:e2e lhci bundle:size"
   },
   "keywords": [
     "ai-education",

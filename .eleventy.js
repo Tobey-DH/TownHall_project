@@ -128,6 +128,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/js/");
 
   return {
+    pathPrefix: "/TownHall_project/",
     dir: {
       input: "src",
       output: "_site",

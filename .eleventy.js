@@ -1,4 +1,4 @@
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import Image from "@11ty/eleventy-img";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
